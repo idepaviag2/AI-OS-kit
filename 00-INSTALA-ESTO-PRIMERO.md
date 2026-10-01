@@ -178,7 +178,40 @@ Muévela a tu carpeta de usuario con el nombre `AI-OS`:
 Si te llegó como repositorio de GitHub y ya hiciste `git clone`, nada más asegúrate de que
 quedó ahí y no en otro lado.
 
-## 2. Ábrela y arranca
+## 2. Pon las plantillas en su lugar
+
+El kit trae cuatro archivos vacíos en la carpeta `plantillas/`. Hay que copiarlos a la
+raíz una sola vez. Pega el bloque que te toque:
+
+**Mac** (en la Terminal, desde la carpeta):
+
+```bash
+cd ~/AI-OS
+cp plantillas/aios-intake.md aios-intake.md
+cp plantillas/CLAUDE.md CLAUDE.md
+cp plantillas/connections.md connections.md
+cp plantillas/decisions-log.md decisions/log.md
+```
+
+**Windows** (en PowerShell, desde la carpeta):
+
+```powershell
+cd $env:USERPROFILE\AI-OS
+Copy-Item plantillas\aios-intake.md aios-intake.md
+Copy-Item plantillas\CLAUDE.md CLAUDE.md
+Copy-Item plantillas\connections.md connections.md
+Copy-Item plantillas\decisions-log.md decisions\log.md
+```
+
+Si prefieres no pegar comandos, abre la carpeta en Claude y pídeselo así:
+*"copia las cuatro plantillas de `plantillas/` a su lugar, según `plantillas/LEEME.md`"*.
+
+> **Por qué este paso existe:** en cuanto llenas esos cuatro archivos contienen tu
+> información real. El `.gitignore` del kit excluye las versiones de la raíz a propósito,
+> para que lo que escribas se quede en tu máquina. Las copias de `plantillas/` están
+> vacías y por eso sí viajan en el repositorio. Detalle en `plantillas/LEEME.md`.
+
+## 3. Ábrela y arranca
 
 **Desde VS Code (lo más cómodo):** `Archivo → Abrir carpeta…` → escoge `AI-OS`. Luego
 abre Claude con el ícono de la chispa ✻ arriba a la derecha del editor, o con
@@ -215,6 +248,7 @@ Lista corta de lo que debe ser cierto antes de pasar a `EMPIEZA-AQUI.md`:
 - [ ] VS Code abre y tiene la extensión de Claude Code instalada
 - [ ] Ya iniciaste sesión (corriste `claude` y autorizaste en el navegador)
 - [ ] La carpeta vive en tu carpeta de usuario, no en Descargas
+- [ ] Los cuatro archivos de `plantillas/` ya están copiados a su lugar
 - [ ] Abriste la carpeta en Claude y te contesta
 
 ---

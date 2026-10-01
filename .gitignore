@@ -12,18 +12,25 @@ audits/
 # prioridades, muestras de tu forma de escribir. Mientras estén listados aquí, se quedan
 # SOLO en tu máquina y nunca se suben al repositorio.
 #
+# Las rutas van ancladas con "/" al inicio a propósito: así se excluyen las versiones que
+# tú llenas en la raíz, pero NO las copias vacías de plantillas/, que sí tienen que
+# viajar en el repo.
+#
 # Decide tú: si el repo es privado y tu empresa permite respaldar este contexto fuera,
 # borra las líneas que quieras respaldar y haz commit. Si manejas información
 # confidencial de clientes o de una empresa regulada, déjalas como están.
-CLAUDE.md
-aios-intake.md
-connections.md
+/CLAUDE.md
+/aios-intake.md
+/connections.md
+/pendientes.md
+/context/prioridades.md
+/context/sobre-el-negocio.md
+/context/sobre-mi.md
+/decisions/log.md
+/references/voice.md
+
+# Cualquier pendientes.md de una carpeta de dominio
 pendientes.md
-context/prioridades.md
-context/sobre-el-negocio.md
-context/sobre-mi.md
-decisions/log.md
-references/voice.md
 
 # Material pesado y documentos de trabajo — no tienen por qué versionarse
 bin/

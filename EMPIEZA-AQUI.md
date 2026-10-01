@@ -189,6 +189,7 @@ En corto, lo mínimo:
 | `references/` | Frameworks, tu voz, guías de APIs. |
 | `decisions/log.md` | Bitácora de decisiones. Solo se agrega, nunca se borra. |
 | `archives/` | Lo viejo. No se borra: se mueve aquí. |
+| `plantillas/` | Las copias vacías de los cuatro archivos de arriba. Ya las usaste en la instalación; quedan ahí como respaldo. |
 
 ---
 
