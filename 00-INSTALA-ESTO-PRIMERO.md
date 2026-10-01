@@ -6,10 +6,17 @@ sola vez. Cuando termines, pasas a `EMPIEZA-AQUI.md`, que es donde empieza lo bu
 No necesitas saber programar. Vas a abrir una ventana de texto y pegar tres o cuatro
 comandos. Cada paso dice exactamente qué pegar y qué tiene que salir.
 
-> **Antes de arrancar necesitas una cosa que no se instala:** una suscripción pagada de
-> Claude (Pro, Max, Team o Enterprise). El plan gratuito de claude.ai **no** incluye
-> Claude Code. Si no sabes con qué cuenta vas a entrar, pregúntalo antes de seguir —
-> instalar sin cuenta no sirve de nada.
+> **Antes de arrancar necesitas una cosa que no se instala: una suscripción pagada de
+> Claude** — Pro, Max, Team o Enterprise. El plan gratuito de claude.ai **no** incluye
+> Claude Code.
+>
+> **Y tiene que ser Claude, no otra IA.** Este kit no funciona con ChatGPT, Gemini,
+> Copilot ni ninguna otra: las tres skills (`/onboard`, `/audit`, `/level-up`), el archivo
+> `CLAUDE.md` y la carpeta `.claude/` son de Claude Code, y solo Claude Code las lee. Una
+> suscripción de otro servicio no sustituye esta.
+>
+> Si no sabes con qué cuenta vas a entrar, resuélvelo antes de seguir — instalar sin
+> cuenta no sirve de nada.
 
 **Requisitos:** Windows 10 (build 1809) o superior, 4 GB de RAM, internet.
 

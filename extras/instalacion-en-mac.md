@@ -7,7 +7,9 @@ equivalentes para **macOS**, para quien monte el kit en una Mac.
 Es el mismo recorrido y el mismo orden. Solo cambian los comandos y el instalador.
 
 **Requisitos:** macOS 13 o superior, 4 GB de RAM, internet, y una suscripción pagada de
-Claude (Pro, Max, Team o Enterprise). El plan gratuito de claude.ai no incluye Claude Code.
+Claude (Pro, Max, Team o Enterprise). El plan gratuito de claude.ai no incluye Claude Code,
+y **tiene que ser Claude**: el kit no funciona con ChatGPT, Gemini ni Copilot, porque las
+skills y el `CLAUDE.md` solo los lee Claude Code.
 
 ---
 
