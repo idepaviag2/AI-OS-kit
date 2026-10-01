@@ -1,244 +1,134 @@
-# 00 — INSTALA ESTO PRIMERO
+# 00 — INSTALA ESTO PRIMERO (Windows)
 
 Esta es la parte aburrida: dejar la máquina lista. Son **20 a 30 minutos** y se hace una
 sola vez. Cuando termines, pasas a `EMPIEZA-AQUI.md`, que es donde empieza lo bueno.
 
-No necesitas saber programar. Vas a abrir una terminal y pegar tres o cuatro comandos.
-Si nunca has abierto una terminal, en el paso 1 te digo exactamente cómo.
+No necesitas saber programar. Vas a abrir una ventana de texto y pegar tres o cuatro
+comandos. Cada paso dice exactamente qué pegar y qué tiene que salir.
 
 > **Antes de arrancar necesitas una cosa que no se instala:** una suscripción pagada de
 > Claude (Pro, Max, Team o Enterprise). El plan gratuito de claude.ai **no** incluye
 > Claude Code. Si no sabes con qué cuenta vas a entrar, pregúntalo antes de seguir —
 > instalar sin cuenta no sirve de nada.
 
----
+**Requisitos:** Windows 10 (build 1809) o superior, 4 GB de RAM, internet.
 
-## Paso 0 — Averigua qué máquina tienes
-
-Todo lo de abajo está escrito dos veces: una para **Mac** y una para **Windows**. Sigue
-solo la tuya y salta la otra.
-
-| Si tienes… | Sigue la ruta |
-|---|---|
-| MacBook, iMac, Mac mini | **Ruta A — Mac** |
-| Laptop o PC con Windows 10 u 11 | **Ruta B — Windows** |
-
-Requisitos mínimos en las dos: **4 GB de RAM**, internet, y macOS 13 o superior /
-Windows 10 (build 1809) o superior.
+*(Esta guía está escrita para Windows. Si en algún momento alguien monta el kit en una
+Mac, los pasos equivalentes están en `extras/instalacion-en-mac.md`.)*
 
 ---
 
-# RUTA A — Mac
-
-## A1. Abre la Terminal
-
-`Cmd + Espacio` → escribe `Terminal` → Enter. Se abre una ventana de texto con un
-cursor. Ahí vas a pegar los comandos. Pegar es `Cmd + V`, y cada comando se ejecuta con
-Enter.
-
-## A2. Instala Claude Code
-
-Pega esto tal cual y dale Enter:
-
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-```
-
-Tarda uno o dos minutos. Cuando termine, **cierra la Terminal y ábrela otra vez** (esto
-importa: si no la reabres, el siguiente comando falla aunque la instalación haya salido
-bien).
-
-Comprueba que quedó:
-
-```bash
-claude --version
-```
-
-Tiene que imprimir un número de versión, algo como `2.1.266 (Claude Code)`. Si dice
-`command not found: claude`, la instalación quedó bien pero la Mac todavía no sabe dónde
-buscarla — avísale a quien te pasó este kit en vez de pelearte con eso.
-
-Esta instalación **se actualiza sola** en segundo plano. No tienes que volver a hacer
-nada.
-
-## A3. Instala Visual Studio Code
-
-Bájalo de la página oficial: **https://code.visualstudio.com** → botón de descarga para
-Mac. Se baja un `.zip`; ábrelo y **arrastra el ícono de Visual Studio Code a tu carpeta
-de Aplicaciones**. Si lo dejas en Descargas se va a portar raro.
-
-Ábrelo una vez para que macOS te pregunte si confías en la app, y dile que sí.
-
-## A4. Instala la extensión de Claude Code en VS Code
-
-Dentro de VS Code:
-
-1. `Cmd + Shift + X` (abre el panel de Extensiones)
-2. Busca **Claude Code**
-3. La de **Anthropic** (`anthropic.claude-code`) → botón **Install**
-
-Si la extensión no aparece después de instalarla, cierra y vuelve a abrir VS Code.
-
-## A5. Entra a tu cuenta
-
-En la Terminal, escribe:
-
-```bash
-claude
-```
-
-Se abre el navegador para que inicies sesión con tu cuenta de Claude. Autoriza, regresa a
-la Terminal, y ya estás dentro. Para salir de Claude se escribe `/exit`.
-
-**Sigue en el paso 1 de la sección "Los dos pasos que faltan", abajo.**
-
----
-
-# RUTA B — Windows
-
-## B1. Abre PowerShell
+## 1. Abre PowerShell
 
 Botón de Inicio → escribe `PowerShell` → ábrelo. **No** necesitas ejecutarlo como
 administrador.
 
-Vas a saber que estás en PowerShell porque el renglón empieza con `PS C:\Users\TuNombre>`.
-Si empieza con `C:\Users\TuNombre>` **sin** el `PS`, estás en CMD y los comandos de abajo
-no son los tuyos — cierra y abre PowerShell.
+Vas a saber que estás en el lugar correcto porque el renglón empieza con
+`PS C:\Users\TuNombre>`. Si empieza con `C:\Users\TuNombre>` **sin** el `PS`, estás en
+CMD, que es otra cosa: cierra y abre PowerShell.
 
-## B2. Instala Claude Code
+Para pegar en PowerShell: `Ctrl + V`. Cada comando se ejecuta con Enter.
 
-Pega esto en PowerShell y dale Enter:
+---
+
+## 2. Instala Claude Code
+
+Pega esto y dale Enter:
 
 ```powershell
 irm https://claude.ai/install.ps1 | iex
 ```
 
-Cuando termine, **cierra PowerShell y ábrelo otra vez**, y comprueba:
+Tarda uno o dos minutos. Cuando termine, **cierra PowerShell y ábrelo otra vez.** Esto
+importa: si no lo reabres, el siguiente comando falla aunque la instalación haya salido
+bien.
+
+Comprueba que quedó:
 
 ```powershell
 claude --version
 ```
 
-Tiene que imprimir un número de versión. Si no lo reconoce, avísale a quien te pasó el
-kit.
+Tiene que imprimir un número de versión, algo como `2.1.266 (Claude Code)`.
 
-> Si te sale el error `'irm' is not recognized`, estás en CMD y no en PowerShell. El
-> comando para CMD es:
-> `curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd`
+- Si dice que no reconoce `claude`, la instalación quedó pero Windows todavía no sabe
+  dónde buscarla — avísale a quien te pasó este kit en vez de pelearte con eso.
+- Si sale `'irm' is not recognized`, estabas en CMD y no en PowerShell. Regresa al paso 1.
 
-## B3. Instala Git para Windows (recomendado)
-
-Bájalo de **https://git-scm.com/downloads/win** e instálalo con todas las opciones por
-default (dale Siguiente a todo).
-
-No es obligatorio, pero sin él Claude Code trabaja con PowerShell en lugar de Bash, y
-casi toda la documentación y los ejemplos del mundo están escritos para Bash. Instálalo y
-te ahorras confusiones.
-
-## B4. Instala Visual Studio Code
-
-De **https://code.visualstudio.com** → descarga para Windows → corre el instalador con
-las opciones por default.
-
-## B5. Instala la extensión de Claude Code en VS Code
-
-Dentro de VS Code:
-
-1. `Ctrl + Shift + X` (panel de Extensiones)
-2. Busca **Claude Code**
-3. La de **Anthropic** (`anthropic.claude-code`) → **Install**
-
-Si no aparece, cierra y vuelve a abrir VS Code.
-
-## B6. Entra a tu cuenta
-
-En PowerShell:
-
-```powershell
-claude
-```
-
-Se abre el navegador, inicias sesión con tu cuenta de Claude, autorizas y regresas. Para
-salir se escribe `/exit`.
+Esta instalación **se actualiza sola** en segundo plano. No tienes que volver a hacer nada.
 
 ---
 
-# Los dos pasos que faltan (iguales en Mac y en Windows)
+## 3. Instala Git para Windows
 
-## 1. Pon esta carpeta donde va a vivir
+Bájalo de **https://git-scm.com/downloads/win** e instálalo dándole Siguiente a todo, sin
+cambiar nada.
 
-Esta carpeta se va a volver la memoria de tu asistente y va a crecer contigo. **No la
-dejes en Descargas.**
+No es estrictamente obligatorio, pero instálalo: sin él Claude Code trabaja con PowerShell
+en lugar de Bash, y casi todos los ejemplos y la documentación del mundo están escritos
+para Bash. Además es lo que hace que el paso 5 (bajar el kit con git) funcione sin
+complicaciones.
 
-Muévela a tu carpeta de usuario con el nombre `AI-OS`:
+---
 
-- **Mac:** `/Users/tu-usuario/AI-OS`
-- **Windows:** `C:\Users\tu-usuario\AI-OS`
+## 4. Instala Visual Studio Code y la extensión de Claude
 
-**El kit te llegó como repositorio privado de GitHub.** Primero acepta la invitación que
-te llegó por correo (necesitas una cuenta de GitHub; es gratis). Luego bájalo con la
-opción A, que es la que no falla.
+**4a.** Baja VS Code de **https://code.visualstudio.com** → botón de descarga para Windows
+→ corre el instalador con las opciones por default.
 
-### Opción A — descargar el ZIP (recomendada para el día 1)
+**4b.** Ábrelo y agrega la extensión:
 
-1. Abre la página del repo: **https://github.com/idepaviag2/AI-OS-kit**
+1. `Ctrl + Shift + X` (abre el panel de Extensiones)
+2. Busca **Claude Code**
+3. La de **Anthropic** (`anthropic.claude-code`) → botón **Install**
+
+Si la extensión no aparece después de instalarla, cierra y vuelve a abrir VS Code.
+
+---
+
+## 5. Baja el kit y ponlo donde va a vivir
+
+Esta carpeta se va a volver la memoria de tu asistente y va a crecer contigo. Va en tu
+carpeta de usuario, **`C:\Users\tu-usuario\AI-OS`**. No la dejes en Descargas.
+
+El kit vive en un repositorio privado de GitHub. Primero **acepta la invitación que te
+llegó por correo** (necesitas cuenta de GitHub; es gratis). Luego escoge una de las dos:
+
+### Opción A — descargar el ZIP (la que no falla)
+
+1. Abre **https://github.com/idepaviag2/AI-OS-kit**
 2. Botón verde **Code** → **Download ZIP**
 3. Descomprime el ZIP y **renombra la carpeta a `AI-OS`** (el ZIP la nombra
    `AI-OS-kit-main`)
-4. Muévela a tu carpeta de usuario: `/Users/tu-usuario/AI-OS` en Mac,
-   `C:\Users\tu-usuario\AI-OS` en Windows
+4. Muévela a `C:\Users\tu-usuario\AI-OS`
 
-Son cuatro clics y ya estás del otro lado. La única desventaja es que no te llegan solas
-las correcciones que se le hagan al kit después; para eso está la opción B, y la puedes
-dejar para cuando ya estés cómodo.
+Cuatro clics y listo. La única desventaja es que no te llegan solas las correcciones que
+se le hagan al kit después; para eso está la opción B, y la puedes dejar para cuando ya
+estés cómodo.
 
 ### Opción B — clonar con git
 
-Es más limpia a la larga porque te deja traer actualizaciones con `git pull`, pero en un
-repo **privado** pide credenciales y ahí es donde la gente se atora. Lee la nota de tu
-sistema antes de pegar el comando.
-
-**Mac** — `git clone` por HTTPS te va a pedir usuario y contraseña, y **GitHub ya no
-acepta contraseñas**: necesitas un token. La ruta corta es instalar la herramienta oficial
-de GitHub, que resuelve el login desde el navegador:
-
-```bash
-brew install gh        # si no tienes Homebrew, usa la opción A
-gh auth login          # escoge GitHub.com → HTTPS → autenticar en el navegador
-cd ~
-gh repo clone idepaviag2/AI-OS-kit AI-OS
-```
-
-**Windows** — aquí sí funciona directo, porque Git para Windows trae un gestor de
-credenciales que abre el navegador solo:
+Más limpia a la larga, porque te deja traer actualizaciones con `git pull`. En Windows
+funciona directo, porque Git para Windows trae un gestor de credenciales que abre el
+navegador solo:
 
 ```powershell
 cd $env:USERPROFILE
 git clone https://github.com/idepaviag2/AI-OS-kit.git AI-OS
 ```
 
-El `AI-OS` del final del comando es a propósito: la carpeta se llama así aunque el repo se
-llame `AI-OS-kit`.
+El `AI-OS` del final es a propósito: la carpeta se llama así aunque el repo se llame
+`AI-OS-kit`.
 
-> **Si te atoras en este paso, no le dediques más de diez minutos: usa la opción A y
-> sigue.** Bajar el kit no es la parte importante.
+> **Si te atoras aquí, no le dediques más de diez minutos: usa la opción A y sigue.**
+> Bajar el kit no es la parte importante.
 
-## 2. Pon las plantillas en su lugar
+---
+
+## 6. Pon las plantillas en su lugar
 
 El kit trae cuatro archivos vacíos en la carpeta `plantillas/`. Hay que copiarlos a la
-raíz una sola vez. Pega el bloque que te toque:
-
-**Mac** (en la Terminal, desde la carpeta):
-
-```bash
-cd ~/AI-OS
-cp plantillas/aios-intake.md aios-intake.md
-cp plantillas/CLAUDE.md CLAUDE.md
-cp plantillas/connections.md connections.md
-cp plantillas/decisions-log.md decisions/log.md
-```
-
-**Windows** (en PowerShell, desde la carpeta):
+raíz una sola vez. En PowerShell:
 
 ```powershell
 cd $env:USERPROFILE\AI-OS
@@ -248,28 +138,33 @@ Copy-Item plantillas\connections.md connections.md
 Copy-Item plantillas\decisions-log.md decisions\log.md
 ```
 
-Si prefieres no pegar comandos, abre la carpeta en Claude y pídeselo así:
+Si prefieres no pegar comandos, abre la carpeta en Claude (paso 7) y pídeselo así:
 *"copia las cuatro plantillas de `plantillas/` a su lugar, según `plantillas/LEEME.md`"*.
 
 > **Por qué este paso existe:** en cuanto llenas esos cuatro archivos contienen tu
-> información real. El `.gitignore` del kit excluye las versiones de la raíz a propósito,
-> para que lo que escribas se quede en tu máquina. Las copias de `plantillas/` están
-> vacías y por eso sí viajan en el repositorio. Detalle en `plantillas/LEEME.md`.
+> información real — nombres de personas, sistemas internos, tus prioridades, muestras de
+> tu forma de escribir. El `.gitignore` del kit excluye las versiones de la raíz a
+> propósito, para que lo que escribas se quede en tu máquina y no se suba a GitHub. Las
+> copias de `plantillas/` están vacías y por eso sí viajan. Detalle en
+> `plantillas/LEEME.md`.
 
-## 3. Ábrela y arranca
+---
 
-**Desde VS Code (lo más cómodo):** `Archivo → Abrir carpeta…` → escoge `AI-OS`. Luego
-abre Claude con el ícono de la chispa ✻ arriba a la derecha del editor, o con
-`Cmd/Ctrl + Shift + P` → escribe "Claude Code" → *Open in New Tab*.
+## 7. Entra a tu cuenta y arranca
 
-**Desde la terminal:**
+**Desde VS Code (lo más cómodo):** `Archivo → Abrir carpeta…` → escoge
+`C:\Users\tu-usuario\AI-OS`. Luego abre Claude con el ícono de la chispa ✻ arriba a la
+derecha del editor, o con `Ctrl + Shift + P` → escribe "Claude Code" → *Open in New Tab*.
 
-```bash
-cd ~/AI-OS
+**Desde PowerShell:**
+
+```powershell
+cd $env:USERPROFILE\AI-OS
 claude
 ```
 
-(En Windows PowerShell es `cd $env:USERPROFILE\AI-OS` y luego `claude`.)
+La primera vez se abre el navegador para que inicies sesión con tu cuenta de Claude.
+Autoriza, regresa, y ya estás dentro. Para salir se escribe `/exit`.
 
 Cuando veas el cursor de Claude esperándote, ya está. **Cierra este archivo y abre
 `EMPIEZA-AQUI.md`.**
@@ -278,22 +173,23 @@ Cuando veas el cursor de Claude esperándote, ya está. **Cierra este archivo y 
 
 ## Verificación — cómo sabes que todo quedó bien
 
-Corre esto y compara:
+Corre esto:
 
-```bash
+```powershell
 claude doctor
 ```
 
-Te imprime un diagnóstico de la instalación y de la configuración, sin arrancar una
-sesión. Si algo está mal, ahí sale con la sugerencia de cómo arreglarlo.
+Te imprime un diagnóstico de la instalación y de la configuración sin arrancar una sesión.
+Si algo está mal, ahí sale con la sugerencia de cómo arreglarlo.
 
-Lista corta de lo que debe ser cierto antes de pasar a `EMPIEZA-AQUI.md`:
+Antes de pasar a `EMPIEZA-AQUI.md`, esto tiene que ser cierto:
 
 - [ ] `claude --version` imprime un número
-- [ ] VS Code abre y tiene la extensión de Claude Code instalada
-- [ ] Ya iniciaste sesión (corriste `claude` y autorizaste en el navegador)
-- [ ] La carpeta vive en tu carpeta de usuario, no en Descargas
+- [ ] Git para Windows instalado
+- [ ] VS Code abre y tiene la extensión de Claude Code
+- [ ] La carpeta está en `C:\Users\tu-usuario\AI-OS`, no en Descargas
 - [ ] Los cuatro archivos de `plantillas/` ya están copiados a su lugar
+- [ ] Ya iniciaste sesión (corriste `claude` y autorizaste en el navegador)
 - [ ] Abriste la carpeta en Claude y te contesta
 
 ---

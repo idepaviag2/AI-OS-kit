@@ -14,17 +14,16 @@ Tiempo real de arranque: **20 minutos el día 1.** Lo demás es un ritual semana
 ## Antes de empezar
 
 > **¿Todavía no tienes Claude Code instalado?** Cierra esto y abre
-> **`00-INSTALA-ESTO-PRIMERO.md`**. Ahí está, paso por paso, cómo dejar la máquina lista
-> en Mac y en Windows. Vuelve aquí cuando `claude --version` te imprima un número.
+> **`00-INSTALA-ESTO-PRIMERO.md`**. Ahí está, paso por paso, cómo dejar la máquina lista.
+> Vuelve aquí cuando `claude --version` te imprima un número.
 
 Si ya instalaste, solo confirma tres cosas:
 
-1. La carpeta vive en tu carpeta de usuario (`~/AI-OS` en Mac,
-   `C:\Users\tu-usuario\AI-OS` en Windows). **No la dejes en Descargas** — este folder se
-   va a volver tu memoria y va a crecer contigo.
+1. La carpeta vive en tu carpeta de usuario: `C:\Users\tu-usuario\AI-OS`. **No la dejes
+   en Descargas** — este folder se va a volver tu memoria y va a crecer contigo.
 2. Ya iniciaste sesión con tu cuenta de Claude.
-3. La abriste en Claude: terminal → `cd ~/AI-OS` → `claude`. (O en VS Code con la
-   extensión, con el ícono de la chispa ✻.)
+3. La abriste en Claude: PowerShell → `cd $env:USERPROFILE\AI-OS` → `claude`. (O en
+   VS Code con la extensión, con el ícono de la chispa ✻.)
 
 Cuando Claude arranque y veas el prompt, ya estás dentro. Sigue.
 
@@ -177,7 +176,8 @@ En corto, lo mínimo:
 
 | Archivo | Para qué |
 |---|---|
-| `00-INSTALA-ESTO-PRIMERO.md` | Cómo dejar la máquina lista (Mac y Windows). Se lee una vez. |
+| `00-INSTALA-ESTO-PRIMERO.md` | Cómo dejar la máquina lista. Se lee una vez. |
+| `extras/instalacion-en-mac.md` | Los mismos pasos, para quien monte el kit en una Mac. |
 | `EMPIEZA-AQUI.md` | Este protocolo. Lo lees tú. |
 | `GUARDRAILS.md` | Reglas duras de operación. Lo leen tú y el asistente. |
 | `CLAUDE.md` | El manual de operación del asistente. Se llena solo con `/onboard`. |

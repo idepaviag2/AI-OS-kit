@@ -1,7 +1,7 @@
 # plantillas/
 
 Aquí viven las cuatro plantillas vacías del kit. **No se trabajan desde aquí**: se copian
-a la raíz de la carpeta una sola vez, en el paso 3 de `00-INSTALA-ESTO-PRIMERO.md`.
+a la raíz de la carpeta una sola vez, en el paso 6 de `00-INSTALA-ESTO-PRIMERO.md`.
 
 | Plantilla | Va a quedar como |
 |---|---|
