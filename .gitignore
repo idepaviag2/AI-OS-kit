@@ -1,0 +1,30 @@
+.env
+.env.local
+.DS_Store
+*.log
+__pycache__/
+node_modules/
+.claude/settings.local.json
+audits/
+
+# --- Contexto de negocio ---
+# Estos archivos contienen tu información real: nombres de personas, sistemas internos,
+# prioridades, muestras de tu forma de escribir. Mientras estén listados aquí, se quedan
+# SOLO en tu máquina y nunca se suben al repositorio.
+#
+# Decide tú: si el repo es privado y tu empresa permite respaldar este contexto fuera,
+# borra las líneas que quieras respaldar y haz commit. Si manejas información
+# confidencial de clientes o de una empresa regulada, déjalas como están.
+CLAUDE.md
+aios-intake.md
+connections.md
+pendientes.md
+context/prioridades.md
+context/sobre-el-negocio.md
+context/sobre-mi.md
+decisions/log.md
+references/voice.md
+
+# Material pesado y documentos de trabajo — no tienen por qué versionarse
+bin/
+*.pdf
