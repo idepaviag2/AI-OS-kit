@@ -175,8 +175,31 @@ Muévela a tu carpeta de usuario con el nombre `AI-OS`:
 - **Mac:** `/Users/tu-usuario/AI-OS`
 - **Windows:** `C:\Users\tu-usuario\AI-OS`
 
-Si te llegó como repositorio de GitHub y ya hiciste `git clone`, nada más asegúrate de que
-quedó ahí y no en otro lado.
+**Si el kit te llegó como repositorio de GitHub**, bájalo así. Primero acepta la
+invitación que te llegó por correo (necesitas una cuenta de GitHub; es gratis). Luego:
+
+**Mac:**
+
+```bash
+cd ~
+git clone https://github.com/idepaviag2/AI-OS-kit.git AI-OS
+cd AI-OS
+```
+
+**Windows** (en PowerShell, con Git para Windows ya instalado):
+
+```powershell
+cd $env:USERPROFILE
+git clone https://github.com/idepaviag2/AI-OS-kit.git AI-OS
+cd AI-OS
+```
+
+Te va a pedir que inicies sesión en GitHub la primera vez. El `AI-OS` del final del
+comando es a propósito: la carpeta se llama así aunque el repo se llame `AI-OS-kit`.
+
+> Si prefieres no usar git: en la página del repo, botón verde **Code** → **Download ZIP**,
+> y descomprime el ZIP en tu carpeta de usuario con el nombre `AI-OS`. Funciona igual,
+> solo que así no te llegan las correcciones que se le hagan al kit después.
 
 ## 2. Pon las plantillas en su lugar
 
