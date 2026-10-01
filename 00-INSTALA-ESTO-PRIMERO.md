@@ -175,31 +175,53 @@ Muévela a tu carpeta de usuario con el nombre `AI-OS`:
 - **Mac:** `/Users/tu-usuario/AI-OS`
 - **Windows:** `C:\Users\tu-usuario\AI-OS`
 
-**Si el kit te llegó como repositorio de GitHub**, bájalo así. Primero acepta la
-invitación que te llegó por correo (necesitas una cuenta de GitHub; es gratis). Luego:
+**El kit te llegó como repositorio privado de GitHub.** Primero acepta la invitación que
+te llegó por correo (necesitas una cuenta de GitHub; es gratis). Luego bájalo con la
+opción A, que es la que no falla.
 
-**Mac:**
+### Opción A — descargar el ZIP (recomendada para el día 1)
+
+1. Abre la página del repo: **https://github.com/idepaviag2/AI-OS-kit**
+2. Botón verde **Code** → **Download ZIP**
+3. Descomprime el ZIP y **renombra la carpeta a `AI-OS`** (el ZIP la nombra
+   `AI-OS-kit-main`)
+4. Muévela a tu carpeta de usuario: `/Users/tu-usuario/AI-OS` en Mac,
+   `C:\Users\tu-usuario\AI-OS` en Windows
+
+Son cuatro clics y ya estás del otro lado. La única desventaja es que no te llegan solas
+las correcciones que se le hagan al kit después; para eso está la opción B, y la puedes
+dejar para cuando ya estés cómodo.
+
+### Opción B — clonar con git
+
+Es más limpia a la larga porque te deja traer actualizaciones con `git pull`, pero en un
+repo **privado** pide credenciales y ahí es donde la gente se atora. Lee la nota de tu
+sistema antes de pegar el comando.
+
+**Mac** — `git clone` por HTTPS te va a pedir usuario y contraseña, y **GitHub ya no
+acepta contraseñas**: necesitas un token. La ruta corta es instalar la herramienta oficial
+de GitHub, que resuelve el login desde el navegador:
 
 ```bash
+brew install gh        # si no tienes Homebrew, usa la opción A
+gh auth login          # escoge GitHub.com → HTTPS → autenticar en el navegador
 cd ~
-git clone https://github.com/idepaviag2/AI-OS-kit.git AI-OS
-cd AI-OS
+gh repo clone idepaviag2/AI-OS-kit AI-OS
 ```
 
-**Windows** (en PowerShell, con Git para Windows ya instalado):
+**Windows** — aquí sí funciona directo, porque Git para Windows trae un gestor de
+credenciales que abre el navegador solo:
 
 ```powershell
 cd $env:USERPROFILE
 git clone https://github.com/idepaviag2/AI-OS-kit.git AI-OS
-cd AI-OS
 ```
 
-Te va a pedir que inicies sesión en GitHub la primera vez. El `AI-OS` del final del
-comando es a propósito: la carpeta se llama así aunque el repo se llame `AI-OS-kit`.
+El `AI-OS` del final del comando es a propósito: la carpeta se llama así aunque el repo se
+llame `AI-OS-kit`.
 
-> Si prefieres no usar git: en la página del repo, botón verde **Code** → **Download ZIP**,
-> y descomprime el ZIP en tu carpeta de usuario con el nombre `AI-OS`. Funciona igual,
-> solo que así no te llegan las correcciones que se le hagan al kit después.
+> **Si te atoras en este paso, no le dediques más de diez minutos: usa la opción A y
+> sigue.** Bajar el kit no es la parte importante.
 
 ## 2. Pon las plantillas en su lugar
 
