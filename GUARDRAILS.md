@@ -55,10 +55,10 @@ Escribe tu versión de esta lista dentro de `CLAUDE.md`. Si no está escrita, no
 El error más caro y más silencioso: acabas con `plan.md`, `roadmap.md`, `pendientes.md`,
 `siguiente-paso.md` y `backlog.md`, todos parcialmente ciertos, ninguno confiable.
 
-**Regla (actualizada el 25 de agosto de 2026): cada carpeta de dominio lleva
-exactamente UN `pendientes.md`, y solo el suyo.** `la-percha/pendientes.md`,
-`gorras/pendientes.md`, y así con cada frente. Toda planeación nueva se escribe DENTRO
-del `pendientes.md` de su carpeta, nunca en uno nuevo con otro nombre.
+**Regla: cada carpeta de dominio lleva exactamente UN `pendientes.md`, y solo el suyo.**
+Si llevas dos frentes de trabajo, serían `frente-a/pendientes.md` y
+`frente-b/pendientes.md`, y así con cada uno. Toda planeación nueva se escribe DENTRO del
+`pendientes.md` de su carpeta, nunca en uno nuevo con otro nombre.
 
 **Nada de un dominio se escribe en el pendientes de otro**, aunque parezca relacionado.
 Si un pendiente no cae claro en una carpeta, el asistente para y pregunta a cuál va —
